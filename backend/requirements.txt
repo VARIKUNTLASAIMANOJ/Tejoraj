@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+langchain
+langgraph
+langchain-ollama
+pydantic-settings
+requests
+arxiv
+python-dotenv
+reportlab
+Pillow

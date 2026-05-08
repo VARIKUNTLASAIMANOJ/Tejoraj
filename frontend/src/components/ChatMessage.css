@@ -1,0 +1,223 @@
+.chat-message {
+    display: flex;
+    align-items: flex-end;
+    gap: clamp(6px, 2vw, 10px);
+    padding: 4px 0;
+    max-width: clamp(75%, 85vw, 85%);
+}
+
+.chat-message.user-message {
+    align-self: flex-end;
+    flex-direction: row;
+}
+
+.chat-message.agent-message {
+    align-self: flex-start;
+    flex-direction: row;
+}
+
+/* ── Avatar ── */
+.message-avatar {
+    width: clamp(28px, 7vw, 36px);
+    height: clamp(28px, 7vw, 36px);
+    border-radius: 50%;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.user-avatar {
+    background: rgba(168, 85, 247, 0.1);
+    border-color: rgba(168, 85, 247, 0.2);
+}
+
+.avatar-icon {
+    font-size: 18px;
+}
+
+/* ── Bubble ── */
+.message-bubble {
+    padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 18px);
+    border-radius: clamp(14px, 3vw, 18px);
+    position: relative;
+    line-height: 1.5;
+}
+
+.user-bubble {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.18), rgba(0, 150, 200, 0.12));
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-bottom-right-radius: 4px;
+}
+
+.agent-bubble {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-bottom-left-radius: 4px;
+}
+
+.message-text {
+    font-size: clamp(0.85rem, 2.5vw, 0.925rem);
+    color: var(--text-primary);
+    margin: 0;
+    word-break: break-word;
+}
+
+.message-table-wrap {
+    overflow-x: auto;
+    margin: 12px 0;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.message-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+    table-layout: auto;
+}
+
+.message-table th,
+.message-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.message-table th {
+    background: rgba(0, 212, 255, 0.1);
+    color: #baf6ff;
+    font-weight: 700;
+    min-width: 140px;
+}
+
+.message-table td {
+    max-width: 200px;
+}
+
+.message-table tr:last-child td {
+    border-bottom: none;
+}
+
+.message-time {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    margin-top: 6px;
+    text-align: right;
+}
+
+.message-sources {
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 8px;
+}
+
+.sources-title {
+    font-size: 0.72rem;
+    margin: 0 0 6px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.sources-list {
+    margin: 0;
+    padding-left: 16px;
+}
+
+.sources-list li {
+    margin: 0 0 4px;
+}
+
+.source-link {
+    color: var(--accent-cyan);
+    font-size: 0.8rem;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.source-link:hover {
+    color: #7feaff;
+}
+
+.source-link-disabled {
+    opacity: 0.75;
+    text-decoration: none;
+    cursor: default;
+}
+
+/* ── Typing Dots ── */
+.typing-bubble {
+    padding: 14px 22px;
+}
+
+.typing-dots {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.typing-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-cyan);
+    animation: typing-dot 1.4s ease-in-out infinite;
+}
+
+@keyframes typing-dot {
+
+    0%,
+    60%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    30% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.typing-dots .dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dots .dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@media (max-width: 768px) {
+    .chat-message {
+        max-width: 92%;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-message {
+        max-width: 95%;
+        gap: 4px;
+    }
+
+    .message-avatar {
+        width: 26px;
+        height: 26px;
+    }
+
+    .avatar-icon {
+        font-size: 14px;
+    }
+
+    .message-time {
+        font-size: 0.62rem;
+    }
+}
