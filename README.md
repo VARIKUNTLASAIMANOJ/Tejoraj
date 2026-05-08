@@ -1,16 +1,16 @@
 # Tejoraj 🚀
 
-An intelligent AI-powered research paper generation and management platform with IEEE formatting, professional PDF/DOC export, and a beautiful space-themed interface.
+An intelligent AI-powered space exploration and research platform featuring smart paper generation, real-time chat, NASA data integration, and a space-themed interface.
+
 
 ## Features ✨
 
 - **AI-Powered Paper Generation**: Generate structured research papers with AI assistance using LLM agents
-- **IEEE Formatting**: Automatic formatting to IEEE standards with proper sections and citations
 - **Multiple Export Formats**: Export to PDF (with embedded figures) or DOC
 - **Smart Title & Keywords**: Auto-generate paper titles and keywords from topic
 - **Research Integration**: Built-in integration with arXiv and NASA APIs for sources and images
 - **Real-time Chat**: Interactive chat interface for research discussion and Q&A
-- **Beautiful UI**: Space-themed interface with smooth animations and responsive design
+- **UI**: Space-themed interface with smooth animations and responsive design
 - **Image Embedding**: Automatic fetching and embedding of NASA images in PDFs
 
 ## Tech Stack 🛠️
